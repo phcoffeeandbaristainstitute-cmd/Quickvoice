@@ -1,0 +1,162 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ──────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.headerInner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 30px;
+  height: 30px;
+  background: var(--teal);
+  color: white;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+/* ── Toggle ──────────────────────────────────────── */
+.toggle {
+  display: flex;
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+  margin-left: auto;
+}
+
+.toggleBtn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  background: transparent;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.toggleBtn.active {
+  background: var(--teal);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.toggleBtn:not(.active):hover {
+  background: var(--border);
+  color: var(--ink);
+}
+
+/* ── Download button ──────────────────────────────── */
+.downloadBtn {
+  background: var(--ink);
+  color: white;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.downloadBtn:hover:not(:disabled) {
+  background: var(--teal);
+}
+
+.downloadBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.mobileDownload {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* ── Main ────────────────────────────────────────── */
+.main {
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.readOnly {
+  background: var(--bg-subtle) !important;
+  color: var(--ink-muted) !important;
+  cursor: default;
+}
+
+/* ── Footer ──────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  border-top: 1.5px solid var(--border);
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .headerInner {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .logoText { display: none; }
+
+  .toggle { margin-left: auto; }
+
+  .downloadBtn:not(.mobileDownload) {
+    display: none;
+  }
+
+  .mobileDownload {
+    display: block;
+  }
+
+  .main {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,66 @@
+.zone {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zone:hover {
+  border-color: var(--teal);
+  background: var(--teal-light);
+}
+
+.hidden {
+  display: none;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.placeholder span {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.placeholder small {
+  font-size: 0.75rem;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.preview img {
+  max-height: 72px;
+  max-width: 160px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.remove {
+  font-size: 0.75rem;
+  color: var(--danger);
+  background: transparent;
+  border: 1px solid var(--danger) !important;
+  padding: 0.2rem 0.6rem;
+}
+
+.remove:hover {
+  background: #fef2f2;
+}

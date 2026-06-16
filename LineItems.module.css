@@ -1,0 +1,82 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0 0 0.5rem;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.col {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.amount {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--border) !important;
+  color: var(--ink-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.remove:hover:not(:disabled) {
+  background: #fef2f2;
+  border-color: var(--danger) !important;
+  color: var(--danger);
+}
+
+.remove:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.addBtn {
+  background: transparent;
+  color: var(--teal);
+  border: 1.5px dashed var(--teal) !important;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.addBtn:hover {
+  background: var(--teal-light);
+}
+
+@media (max-width: 600px) {
+  .header { display: none; }
+  .row { flex-wrap: wrap; }
+  .row > div { min-width: 40%; }
+}
